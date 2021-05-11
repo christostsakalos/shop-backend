@@ -1,0 +1,24 @@
+
+version: '3.8'
+services:
+  shop_api:
+    container_name: shopbackend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - shop_db
+
+  shop_db:
+    container_name: shop_db
+    image: 'postgres:9.5'
+    volumes:
+      - '.shop_db:/var/lib/postgresql/data'
+    env_file:
+      - database.env # configure postgres
+    ports:
+      - '5432:5432'
