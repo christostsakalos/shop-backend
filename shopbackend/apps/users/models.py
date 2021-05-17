@@ -86,7 +86,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     postcode = models.CharField(max_length=50, null=True)
     is_staff = models.BooleanField(default=False)  # a admin user; non super-user
     is_admin = models.BooleanField(default=False)
-    roles = models.CharField(max_length=50, choices = ROLES, null=True)
+    roles = models.CharField(max_length=50, choices = ROLES, null=True, default='User')
     is_active = models.BooleanField(default=True)
 
     USERNAME_FIELD = 'email'

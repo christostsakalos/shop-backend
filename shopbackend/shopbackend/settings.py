@@ -38,14 +38,14 @@ CORS_ORIGIN_ALLOW_ALL = True
     "http://127.0.0.1:8080",
 ] """
 
-""" REST_FRAMEWORK = {
+REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
-    'DEFAULT_PERMISSION_CLASSES': (
+    'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
-    )
-} """
+    ]
+}
 
 # Application definition
 
@@ -68,6 +68,7 @@ INSTALLED_APPS = [
 DJOSER = {
     "SERIALIZERS":{
      'current_user': 'apps.users.serializers.UserSerializer',},
+    "USER_CREATE_PASSWORD_RETYPE": True,
 }
 
 MIDDLEWARE = [
