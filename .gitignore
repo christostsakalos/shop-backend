@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+
+.shop_db
+env
+
+migrations
 # Distribution / packaging
 .Python
 build/

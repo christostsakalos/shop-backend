@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 from datetime import timedelta
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
@@ -84,6 +85,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     address = models.CharField(max_length=50, null=True)
     city = models.CharField(max_length=50, null=True)
     postcode = models.CharField(max_length=50, null=True)
+    phone = PhoneNumberField(region="GB", null=True)
     is_staff = models.BooleanField(default=False)  # a admin user; non super-user
     is_admin = models.BooleanField(default=False)
     roles = models.CharField(max_length=50, choices = ROLES, null=True, default='User')
