@@ -25,6 +25,9 @@ class CategorySerializer(serializers.ModelSerializer):
             "id",
             "name",
             "get_absolute_url",
+            "description",
+            "get_image",
+            "get_thumbnail",
             "products",
         )
 
@@ -37,5 +40,7 @@ class ParentcategorySerializer(serializers.ModelSerializer):
             "id",
             "name",
             "get_absolute_url",
+            "get_image",
+            "get_thumbnail",
             "categories",
         )
